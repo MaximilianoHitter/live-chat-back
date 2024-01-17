@@ -1,0 +1,25 @@
+{
+"Try catch con sendResponse":{
+    "prefix": "ts",
+    "body": [
+        "try {",
+        "\t${1:contenidoDelMetodo}",
+        "} catch (\\Exception $$e) {",
+        "\tsetLog($$e->getMessage(), get_class().'::'. __FUNCTION__, $$e->getTrace());",
+        "\treturn respuesta(null, ['general'=>'Ha ocurrido un error interno.'], 490);",
+        "}"
+    ],
+    "description":"Para generar un bloque try catch que devuelva el error en mi forma"
+},
+
+"Cast de timestamps en modelo laravel":{
+    "prefix": "lacast",
+    "body": [
+        "protected $$casts = [",
+        "\t'created_at' => 'datetime:d/m/Y',",
+        "\t'updated_at' => 'datetime:d/m/Y'",
+        "];"
+    ],
+    "description":"Permite generar el cast de los timestamps en los mdoelos de laravel"
+}
+}
