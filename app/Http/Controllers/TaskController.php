@@ -66,6 +66,7 @@ class TaskController extends Controller
 
     public function form(LogginRequest $request){
         try {
+            return respuesta(null, ['general'=>'Ha ocurrido un error interno.'], 490);
             return respuesta('Paso!');
         } catch (\Exception $e) {
             setLog($e->getMessage(), get_class().'::'. __FUNCTION__, $e->getTrace());
