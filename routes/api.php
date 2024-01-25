@@ -45,3 +45,5 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
 //Route::post('/verify_email', [PasswordController::class, 'verify_email']);
+
+Route::post('/form', [TaskController::class, 'form']);

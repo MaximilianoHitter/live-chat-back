@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LogginRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -61,5 +62,14 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         //
+    }
+
+    public function form(LogginRequest $request){
+        try {
+            return respuesta('Paso!');
+        } catch (\Exception $e) {
+            setLog($e->getMessage(), get_class().'::'. __FUNCTION__, $e->getTrace());
+            return respuesta(null, ['general'=>'Ha ocurrido un error interno.'], 490);
+        }
     }
 }
